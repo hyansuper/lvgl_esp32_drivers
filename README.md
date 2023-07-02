@@ -1,5 +1,5 @@
 [edit] forked from https://github.com/lvgl/lvgl_esp32_drivers/.
-Modified and tested with lvgl v8.3 and esp-idf v5.1, only for tft without touch
+Modified tft GC9A01 display for lvgl v9 and esp-idf v5.1
 
 # Display and touchpad drivers for ESP32 using LVGL
 
