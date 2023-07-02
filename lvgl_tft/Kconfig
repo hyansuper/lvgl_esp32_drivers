@@ -219,11 +219,11 @@ menu "LVGL TFT Display controller"
         default 3 if LV_DISPLAY_ORIENTATION_LANDSCAPE_INVERTED
 
     menu "Display resolution"
-        config LV_TFT_DISPLAY_WIDTH
-            int "Display width(pixels)"
+        config LV_TFT_HOR_RES
+            int "Display horizontal resolution(pixels)"
             default 240
-        config LV_TFT_DISPLAY_HEIGHT
-            int "Display height(pixels)"
+        config LV_TFT_VER_RES
+            int "Display vertical resolution(pixels)"
             default 240
     endmenu
 
@@ -992,6 +992,16 @@ menu "LVGL TFT Display controller"
         depends on LV_DISP_BACKLIGHT_PWM
         range 0 100
         default 50
+
+    config LV_DISP_BACKLIGHT_PWM_CH
+        int "Config PWM backlight channel index."
+        depends on LV_DISP_BACKLIGHT_PWM
+        default 0
+        
+    config LV_DISP_BACKLIGHT_PWM_TIMER
+        int "Config PWM backlight timer index."
+        depends on LV_DISP_BACKLIGHT_PWM
+        default 0
 
     config LV_DISP_PIN_BCKL
         int "GPIO for Backlight Control" if \
