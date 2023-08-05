@@ -50,7 +50,7 @@
  **********************/
 
 static disp_backlight_h bckl_handle;
-inline void lvgl_disp_backlight_set(int percent) {
+void lvgl_disp_backlight_set(int percent) {
     disp_backlight_set(bckl_handle, percent);
 }
 /* Interface and driver initialization */
