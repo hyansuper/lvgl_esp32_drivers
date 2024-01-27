@@ -49,10 +49,6 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-static disp_backlight_h bckl_handle;
-void lvgl_disp_backlight_set(int percent) {
-    disp_backlight_set(bckl_handle, percent);
-}
 /* Interface and driver initialization */
 void lvgl_driver_init(void)
 {

@@ -92,7 +92,7 @@ extern "C" {
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
-void lvgl_disp_backlight_set(int percent);
+
 void lvgl_i2c_locking(void* leader);
 
 /* Initialize detected SPI and I2C bus and devices */
