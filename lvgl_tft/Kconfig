@@ -360,6 +360,21 @@ menu "LVGL TFT Display controller"
             select LV_TFT_DISPLAY_MONOCHROME
     endchoice
 
+    config LV_SWAP_COLOR_565
+        bool "Swap color565"
+        default n
+        
+    config CUSTOM_SPI_BUS_MAX_TRANSFER_SIZE
+        bool "Use custom SPI bus max transfer size (bytes)"
+        depends on LV_TFT_DISPLAY_PROTOCOL_SPI
+        help
+            Enable to use a custom display buffer size.
+
+    config CUSTOM_SPI_BUS_MAX_TRANSFER_BYTES
+        int "Custom SPI bus max transfer size (bytes)"
+        depends on CUSTOM_SPI_BUS_MAX_TRANSFER_SIZE
+        default 1024
+
     config CUSTOM_DISPLAY_BUFFER_SIZE
         bool "Use custom display buffer size (bytes)"
         help

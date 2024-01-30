@@ -177,10 +177,13 @@ void GC9A01_flush(lv_disp_t  * drv, const lv_area_t * area, lv_color_t * color_m
 	/*Memory write*/
 	GC9A01_send_cmd(0x2C);				//0x2C
 
-
 	uint32_t size = lv_area_get_width(area) * lv_area_get_height(area);
 
-	GC9A01_send_color((void*)color_map, size * 2);
+	#ifdef CONFIG_LV_SWAP_COLOR_565
+	lv_draw_sw_rgb565_swap((void*)color_map, size);
+	#endif
+
+	GC9A01_send_color((void*)color_map, size*2);
 }
 
 void GC9A01_sleep_in()
